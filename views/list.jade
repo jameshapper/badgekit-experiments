@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1= subtitle
+	ul
+		each badge, index in badges
+			h2= badge.name
+			img(alt=badge.name src=badge.imageUrl)
+			p= badge.strapline
+			a(href='bdetail?slug='+badge.slug) More
