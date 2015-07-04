@@ -15,6 +15,7 @@ router.use('/blist', require('./blist.js'));
 router.use('/bdetail', require('./bdetail.js'));
 router.use('/bapply', require('./bapply.js'));
 router.use('/bsubmit', require('./bsubmit.js'));
+router.use('/hook', require('./hook.js'));
 
 
 module.exports = router;

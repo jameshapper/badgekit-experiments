@@ -13,7 +13,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
 
-router.post('/hook', function (req, res) {
+router.post('/', function (req, res) {
 
     var token = req.headers.authorization;
     token = token.slice(token.indexOf('"') + 1, -1);
