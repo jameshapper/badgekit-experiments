@@ -75,15 +75,15 @@ router.post('/', function (req, res) {
                         var reviewItems = req.body.review.reviewItems;
                         console.log("reviewItems check: ",reviewItems);
                         var r;
-//                        for (r = 0; r < reviewItems.length; r++) {
-//                            info += "<li><em>" + reviewItems[r].comment + "</em></li>";
+                        for (r = 0; r < reviewItems.length; r++) {
+                            info += "<li><em>" + reviewItems[r].comment + "</em></li>";
                             //can also include whether each criteria item was satisfied
-//                      }
+                        }
                         info += "</ul>";
                         info += "<p><strong><em>Thanks for applying!</em></strong></p>";
 
                         //send email to earner with information from reviewer and link (if approved) for accepting badge
-                        var transporter = nodemailer.createTransport();
+/*                        var transporter = nodemailer.createTransport();
                         transporter.sendMail({
                             from: "Badge Issuer <happer@hotmail.com>", //your email
                             to: emailTo,
@@ -91,7 +91,7 @@ router.post('/', function (req, res) {
                             generateTextFromHTML: true,
                             html: info
                         });
-
+*/
                         break;
                 }
             }
