@@ -17,8 +17,6 @@ router.post('/', function (req, res) {
 
     console.log("request to hook.js arrived");
     var token = req.headers.authorization;
-    console.log("req.headers.authoriation: ");
-    console.log(token);
     token = token.slice(token.indexOf('"') + 1, -1);
     if (!jws.verify(token, 'donttell')) { //use your secret
         console.log("verification failed");
@@ -28,6 +26,8 @@ router.post('/', function (req, res) {
         var decodedToken;
         try {
             decodedToken = jws.decode(token);
+            console.log("decodedToken:");
+            console.log(decodedToken);
             if (decodedToken.payload.body.hash !== crypto.createHash('sha256').update(JSON.stringify(req.body)).digest('hex')) {
                 console.log("body hash does not match token hash");
             }
