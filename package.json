@@ -4,12 +4,12 @@
   "description": "Test upload to AWS S3",
   "main": "app.js",
   "scripts": {
-        "start": "node app.js"
-    },
-   "repository": {
-        "type": "git",
-        "url": "https://shielded-beach-7575.git"
-    },
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://shielded-beach-7575.git"
+  },
   "author": "J Happer <happer@hotmail.com> (http://stemArtisans.com)",
   "license": "ISC",
   "dependencies": {
@@ -24,6 +24,7 @@
     "jws": "^3.0.0",
     "logfmt": "^1.2.0",
     "morgan": "~1.5.1",
+    "nodemailer": "^1.4.0",
     "path": "^0.11.14",
     "qs": "^3.1.0",
     "serve-favicon": "~2.2.0"

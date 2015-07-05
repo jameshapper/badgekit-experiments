@@ -9,6 +9,7 @@ var logfmt = require("logfmt");
 var crypto = require("crypto");
 var qs = require("qs");
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
@@ -35,8 +36,8 @@ router.post('/', function (req, res) {
             }
             else {
                 //process review data
-                console.log("request body: ");
-                console.log(req.body);
+//                console.log("request body: ");
+//                console.log(req.body);
                 var action = req.body.action;
                 var info = "";
                 var emailTo = "";
@@ -72,6 +73,7 @@ router.post('/', function (req, res) {
                         info += "<li><em>" + req.body.review.comment + "</em></li>";
                         //review items array, one per criteria - build into list
                         var reviewItems = req.body.review.reviewItems;
+                        console.log("reviewItems check: ",reviewItems);
                         var r;
 //                        for (r = 0; r < reviewItems.length; r++) {
 //                            info += "<li><em>" + reviewItems[r].comment + "</em></li>";
@@ -81,8 +83,8 @@ router.post('/', function (req, res) {
                         info += "<p><strong><em>Thanks for applying!</em></strong></p>";
 
                         //send email to earner with information from reviewer and link (if approved) for accepting badge
-                        var mail = require("nodemailer").mail;
-                        mail({
+                        var transporter = nodemailer.createTransport();
+                        transporter.sendMail({
                             from: "Badge Issuer <happer@hotmail.com>", //your email
                             to: emailTo,
                             subject: "Badge", //your subject
