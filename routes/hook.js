@@ -33,7 +33,7 @@ router.post('/', function (req, res) {
             console.log(decodedToken);
             if (decodedToken.payload.body.hash !== crypto.createHash('sha256').update(JSON.stringify(req.body)).digest('hex')) {
                 console.log("body hash does not match token hash");
-            }
+                }
             else {
                 //process review data
 //                console.log("request body: ");
@@ -83,7 +83,7 @@ router.post('/', function (req, res) {
                         info += "<p><strong><em>Thanks for applying!</em></strong></p>";
 
                         //send email to earner with information from reviewer and link (if approved) for accepting badge
-/*                        var transporter = nodemailer.createTransport();
+                        var transporter = nodemailer.createTransport();
                         transporter.sendMail({
                             from: "Badge Issuer <happer@hotmail.com>", //your email
                             to: emailTo,
@@ -91,12 +91,13 @@ router.post('/', function (req, res) {
                             generateTextFromHTML: true,
                             html: info
                         });
-*/
+                        console.log("info string is ", info);
+
                         break;
                 }
             }
         } catch (err) {
-            console.log("error decoding the data");
+            console.log("error decoding the data", err);
         }
     }
 });
