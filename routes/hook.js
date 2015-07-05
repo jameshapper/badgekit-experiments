@@ -16,6 +16,8 @@ router.use(logfmt.requestLogger());
 router.post('/', function (req, res) {
 
     console.log("request to hook.js arrived");
+    console.log("request headers are ");
+    console.log(req.headers);
     var token = req.headers.authorization;
     token = token.slice(token.indexOf('"') + 1, -1);
     if (!jws.verify(token, 'HS256', 'donttell')) { //use your secret
