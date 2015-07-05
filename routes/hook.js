@@ -33,6 +33,8 @@ router.post('/', function (req, res) {
             }
             else {
                 //process review data
+                console.log("request body: ");
+                console.log(req.body);
                 var action = req.body.action;
                 var info = "";
                 var emailTo = "";
