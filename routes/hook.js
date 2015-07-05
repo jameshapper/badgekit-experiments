@@ -73,10 +73,10 @@ router.post('/', function (req, res) {
                         //review items array, one per criteria - build into list
                         var reviewItems = req.body.review.reviewItems;
                         var r;
-                        for (r = 0; r < reviewItems.length; r++) {
-                            info += "<li><em>" + reviewItems[r].comment + "</em></li>";
+//                        for (r = 0; r < reviewItems.length; r++) {
+//                            info += "<li><em>" + reviewItems[r].comment + "</em></li>";
                             //can also include whether each criteria item was satisfied
-                        }
+//                      }
                         info += "</ul>";
                         info += "<p><strong><em>Thanks for applying!</em></strong></p>";
 
