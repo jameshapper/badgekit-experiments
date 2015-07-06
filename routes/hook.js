@@ -97,7 +97,7 @@ router.post('/', function (req, res) {
                         //trying to work with sendgrid instead
                         sendgrid.send({
                             to: emailTo,
-                            from: 'Badge Issuer <happer@hotmail.com>',
+                            from: 'happer@hotmail.com',
                             subject: 'Badge via sendgrid',
                             text: 'My first email through SendGrid. html version should have badge information',
                             html: info
