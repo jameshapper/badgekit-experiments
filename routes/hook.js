@@ -10,6 +10,8 @@ var crypto = require("crypto");
 var qs = require("qs");
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+var sendgrid = require('sendgrid')(process.env.SG_USER, process.env.SG_PW);
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
@@ -83,13 +85,25 @@ router.post('/', function (req, res) {
                         info += "<p><strong><em>Thanks for applying!</em></strong></p>";
 
                         //send email to earner with information from reviewer and link (if approved) for accepting badge
-                        var transporter = nodemailer.createTransport();
+/*                        var transporter = nodemailer.createTransport();
                         transporter.sendMail({
                             from: "Badge Issuer <happer@hotmail.com>", //your email
                             to: emailTo,
                             subject: "Badge", //your subject
                             generateTextFromHTML: true,
                             html: info
+                        });
+*/
+                        //trying to work with sendgrid instead
+                        sendgrid.send({
+                            to: emailTo,
+                            from: 'Badge Issuer <happer@hotmail.com>',
+                            subject: 'Badge via sendgrid',
+                            text: 'My first email through SendGrid. html version should have badge information',
+                            html: info
+                        }, function (err, json) {
+                            if (err) { return console.error(err); }
+                            console.log(json);
                         });
                         console.log("info string is ", info);
 
