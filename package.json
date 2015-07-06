@@ -27,6 +27,7 @@
     "nodemailer": "^1.4.0",
     "path": "^0.11.14",
     "qs": "^3.1.0",
+    "sendgrid": "^1.8.0",
     "serve-favicon": "~2.2.0"
   }
 }
