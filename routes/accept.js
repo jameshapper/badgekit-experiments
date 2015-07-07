@@ -14,11 +14,11 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
 
-console.log("accept.js accepted");
-
-/*
 router.get('/', function (req, res) {
     //issue the badge
+
+    console.log("accept.js accepted");
+
     var badgeSlug = req.param("badge");
     var earner = req.param("earner");
     var application = req.param("application");
@@ -32,6 +32,7 @@ router.get('/', function (req, res) {
     console.log("awardPath", awardPath);
     console.log("awardData", awardData);
 
+    /*
     var claimData = {
         header: { typ: 'JWT', alg: 'HS256' },
         payload: {
@@ -140,9 +141,9 @@ router.get('/', function (req, res) {
     // post the data--I believe this leads to the creation of the badge instance
     postRequest.write(awardData);
     postRequest.end();
-
+*/
 });
 
-*/
+
 
 module.exports = router;
