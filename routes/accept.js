@@ -10,7 +10,7 @@ var crypto = require("crypto");
 var qs = require("qs");
 var bodyParser = require('body-parser');
 
-router.use(bodyParser.json());
+//router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
 
@@ -25,6 +25,9 @@ router.get('/', function (req, res) {
     var awardData = qs.stringify({
         email: earner
     });
+
+    console.log("awardPath", awardPath);
+    console.log("awardData", awardData);
 
     var claimData = {
         header: { typ: 'JWT', alg: 'HS256' },
