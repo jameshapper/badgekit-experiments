@@ -109,6 +109,28 @@ router.post('/', function (req, res) {
                         console.log("info string is ", info);
 
                         break;
+
+                    case 'award':
+                        //process award hook
+                        emailTo = req.body.email;
+                        info += "<p>You've been awarded this badge:</p>";
+                        info += "<img src='" + req.body.badge.imageUrl + "' alt='badge'/>";
+                        info += "<p><a href='http://shielded-beach-7575.herokuapp.com/viewBadge?assertion=" +
+                            req.body.assertionUrl +
+                            "'>View Badge</a></p>";
+                        //can offer to push to backpack etc
+                        sendgrid.send({
+                            to: emailTo,
+                            from: 'happer@hotmail.com',
+                            subject: 'your badge!',
+                            text: 'Your badge has been processed',
+                            html: info
+                        }, function (err, json) {
+                            if (err) { return console.error(err); }
+                            console.log(json);
+                        });
+
+                        break;
                 }
             }
         } catch (err) {
