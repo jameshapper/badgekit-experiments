@@ -18,12 +18,15 @@ router.post('/', function (req, res) {
     //submit form
     console.log(req.body);
     var applicationPath = "/systems/badgekit/badges/" + req.body.slug + "/applications";
-    console.log(applicationPath);
+    console.log("applicationPath", applicationPath);
+
 
     var appData = qs.stringify({
         learner: req.body.email,
         evidence: [{ reflection: req.body.evidence }]
     });
+
+    console.log("appData", appData);
 
     var claimData = {
         header: { typ: 'JWT', alg: 'HS256' },
