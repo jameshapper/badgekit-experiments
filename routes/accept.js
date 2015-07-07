@@ -67,7 +67,7 @@ router.get('/', function (req, res) {
             //should include "created", "slug", "email", "expires", "issuedOn", "assertionUrl"
             var awardData = JSON.parse(response.join(''));
             console.log('accept response: ' + response.join(''));//output all at once
-/*
+
                         if (awardData.status === "created") { //status created
                             res.render('accept', {});
             
@@ -131,7 +131,7 @@ router.get('/', function (req, res) {
                             res.send("Whoops! Something went wrong with your badge.");
                         }
 
-*/
+
 
                     });
                 });
@@ -141,9 +141,11 @@ router.get('/', function (req, res) {
                 postRequest.on('error', function (e) {
                     console.error(e);
                 });
+
+*/
                 // post the data--I believe this leads to the creation of the badge instance/                postRequest.write(awardData);
                 postRequest.end();
-*/
+
             console.log("accept.js accepted to this point");
         
 });
