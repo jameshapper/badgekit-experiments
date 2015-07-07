@@ -13,7 +13,7 @@ var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.use(logfmt.requestLogger());
-console.log("made it to blist!");
+//console.log("made it to blist!");
 
 router.get('/', function (req, res) {
 
