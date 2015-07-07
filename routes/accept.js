@@ -51,8 +51,8 @@ router.get('/', function (req, res) {
         method: 'POST',
         headers: {
             'Authorization': 'JWT token="' + jws.sign(claimData) + '"',
-            'Content-Type': 'application/x-www-form-urlencoded'//,
-//            'Content-Length': Buffer.byteLength(awardData)
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Length': Buffer.byteLength(awardData)
         }
     };
 
