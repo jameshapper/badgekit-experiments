@@ -17,11 +17,9 @@ router.use(logfmt.requestLogger());
 router.get('/', function (req, res) {
     //issue the badge
 
-    console.log("accept.js accepted");
-
-    var badgeSlug = req.param("badge");
-    var earner = req.param("earner");
-    var application = req.param("application");
+    var badgeSlug = req.query.badge;
+    var earner = req.query.earner;
+    var application = req.query.application;
 
     var awardPath = "/systems/badgekit/badges/" + badgeSlug + "/instances";
 
@@ -32,7 +30,6 @@ router.get('/', function (req, res) {
     console.log("awardPath", awardPath);
     console.log("awardData", awardData);
 
-    /*
     var claimData = {
         header: { typ: 'JWT', alg: 'HS256' },
         payload: {
@@ -58,6 +55,8 @@ router.get('/', function (req, res) {
             'Content-Length': Buffer.byteLength(awardData)
         }
     };
+
+/*
 
     var postRequest = http.request(requestOptions, function (acceptResponse) {
         var response = [];
@@ -142,6 +141,8 @@ router.get('/', function (req, res) {
     postRequest.write(awardData);
     postRequest.end();
 */
+
+    console.log("accept.js accepted to this point");
 });
 
 
