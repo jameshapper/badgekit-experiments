@@ -67,8 +67,8 @@ router.get('/', function (req, res) {
         acceptResponse.on('end', function () {
             //join chunks in reponse array into a string and then turn into JSON
             //should include "created", "slug", "email", "expires", "issuedOn", "assertionUrl"
-            var awardData = JSON.parse(response.join(''));
-            console.log('accept response: ' + response.join(''));//output all at once
+//            var awardData = JSON.parse(response.join(''));
+//            console.log('accept response: ' + response.join(''));//output all at once
 /*
                         if (awardData.status === "created") { //status created
                             res.render('accept', {});
@@ -140,8 +140,9 @@ router.get('/', function (req, res) {
                     console.error(e);
                 });
 
-                // post the data--I believe this leads to the creation of the badge instance/                postRequest.write(awardData);
-                postRequest.end();
+    // post the data--I believe this leads to the creation of the badge instance/  
+//                postRequest.write(awardData);
+//                postRequest.end();
         
 });
 
