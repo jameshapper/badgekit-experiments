@@ -38,8 +38,8 @@ router.get('/', function (req, res) {
             method: 'POST',
             path: awardPath,
             body: {
-                alg: "SHA256",
-                hash: crypto.createHash('SHA256').update(awardData).digest('hex')
+                alg: "sha256",
+                hash: crypto.createHash('sha256').update(awardData).digest('hex')
             }
         },
         secret: 'donttell'
