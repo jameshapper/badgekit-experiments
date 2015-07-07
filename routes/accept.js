@@ -14,6 +14,9 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
 
+console.log("accept.js accepted");
+
+/*
 router.get('/', function (req, res) {
     //issue the badge
     var badgeSlug = req.param("badge");
@@ -139,5 +142,7 @@ router.get('/', function (req, res) {
     postRequest.end();
 
 });
+
+*/
 
 module.exports = router;
