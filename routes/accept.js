@@ -139,3 +139,5 @@ router.get('/', function (req, res) {
     postRequest.end();
 
 });
+
+module.exports = router;
