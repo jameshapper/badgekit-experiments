@@ -19,7 +19,6 @@ router.get('/', function (req, res) {
 
     var badgeSlug = req.query.badge;
     var earner = req.query.earner;
-    var earner = "happer@hotmail.com";
     var application = req.query.application;
 
     var awardPath = "/systems/badgekit/badges/" + badgeSlug + "/instances";
