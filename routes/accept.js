@@ -42,7 +42,7 @@ router.get('/', function (req, res) {
                 hash: crypto.createHash('sha256').update(awardData).digest('hex')
             }
         },
-        secret: 'zither'
+        secret: 'donttell'
     };
 
     var requestOptions = {
