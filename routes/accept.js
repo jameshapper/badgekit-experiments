@@ -14,7 +14,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
 
-router.get('/', function (req, res) {
+router.post('/', function (req, res) {
     //issue the badge
 
     var badgeSlug = req.query.badge;
