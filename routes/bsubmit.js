@@ -41,7 +41,7 @@ router.post('/', function (req, res) {
                 hash: crypto.createHash('sha256').update(appData).digest('hex')
             }
         },
-        secret: 'donttell'
+        secret: process.env.BK_SECRET
     };
 
     var requestOptions = {

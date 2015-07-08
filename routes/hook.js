@@ -23,7 +23,7 @@ router.post('/', function (req, res) {
     console.log(req.headers);
     var token = req.headers.authorization;
     token = token.slice(token.indexOf('"') + 1, -1);
-    if (!jws.verify(token, 'HS256', 'donttell')) { //use your secret
+    if (!jws.verify(token, 'HS256', process.env.BK_SECRET)) { //use your secret
         console.log("verification failed");
     }
     else {
@@ -98,7 +98,7 @@ router.post('/', function (req, res) {
                         //trying to work with sendgrid instead
                         sendgrid.send({
                             to: emailTo,
-                            from: 'happer@hotmail.com',
+                            from: process.env.EMAIL,
                             subject: 'Badge via sendgrid',
                             text: 'My first email through SendGrid. html version should have badge information',
                             html: info

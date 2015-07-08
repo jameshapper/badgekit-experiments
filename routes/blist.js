@@ -26,7 +26,7 @@ router.get('/', function (req, res) {
             method: 'GET',
             path: '/systems/badgekit/badges?published=true'
         },
-        secret: 'donttell'
+        secret: process.env.BK_SECRET
     };
 
     var requestOptions = {

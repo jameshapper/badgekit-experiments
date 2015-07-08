@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
             method: 'GET',
             path: badgePath
         },
-        secret: 'donttell'
+        secret: process.env.BK_SECRET
     };
 
     var requestOptions = {
