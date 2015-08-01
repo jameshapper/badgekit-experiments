@@ -5,6 +5,6 @@ block content
 	ul
 		each badge, index in badges
 			h2= badge.name
-			img(alt=badge.name src=badge.imageUrl)
+			img(alt=badge.name src=badge.imageUrl width=350)
 			p= badge.strapline
 			a(href='bdetail?slug='+badge.slug) More

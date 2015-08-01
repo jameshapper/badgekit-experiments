@@ -1,11 +1,18 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
+var utils = require('./utils');
 var bodyParser = require('body-parser');
+var csrf = require('csurf');
+var mongoose = require('mongoose');
+var session = require('client-sessions');
 var logfmt = require("logfmt");
+var middleware = require('./middleware');
+
 
 var routes = require('./routes/index');
 
+mongoose.connect('mongodb://localhost/svcc');
 var app = express();
 
 // view engine setup
@@ -15,10 +22,21 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 //app.use(logger('dev'));
+
+// middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); //default express app has this as false?
+app.use(session({
+    cookieName: 'session', //JH This "key name" is added to the req object (client-sessions documentation)
+    secret: 'keyboard cat',
+    duration: 30 * 60 * 1000,
+    activeDuration: 5 * 60 * 1000,
+}));
+app.use(csrf());
+app.use(middleware.simpleAuth);
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logfmt.requestLogger());
-app.use(bodyParser.urlencoded({ extended: true })); //default express app has this as false?
 
 app.use('/', routes);
 

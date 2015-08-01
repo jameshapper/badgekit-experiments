@@ -1,0 +1,147 @@
+C:\Users\james\Desktop\Badges\stemartisansnode>heroku logs --source app
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+2015-07-08T01:51:27.427497+00:00 app[web.1]: awardPath /systems/badgekit/badges/
+dl100a-basicelectronics/instances
+2015-07-08T01:52:26.791876+00:00 app[web.1]: { [Error: socket hang up] code: 'EC
+ONNRESET' }
+2015-07-08T01:57:00.629492+00:00 app[web.1]: Detected 512 MB available memory, 5
+12 MB limit per process (WEB_MEMORY)
+2015-07-08T01:57:00.629516+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-07-08T01:57:01.657815+00:00 app[web.1]: Listening on 14710
+2015-07-08T02:15:59.597980+00:00 app[web.1]: ip=::ffff:10.123.198.169 time=2015-
+07-08T02:15:59.593Z method=GET path=/ status=304 request_id=997466fe-3784-4bbf-8
+7b3-3704d6cc2eac content_length= content_type= elapsed=8ms
+2015-07-08T16:35:22.204440+00:00 app[web.1]: Recommending WEB_CONCURRENCY=1
+2015-07-08T16:35:22.204363+00:00 app[web.1]: Detected 512 MB available memory, 5
+12 MB limit per process (WEB_MEMORY)
+2015-07-08T16:35:24.059416+00:00 app[web.1]: Listening on 43528
+2015-07-08T16:35:25.892710+00:00 app[web.1]: blist router.get made it!
+2015-07-08T16:35:34.392417+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:34.381Z method=GET path=/blist status=304 request_id=9855ab5a-9194-46
+a6-8c1c-553d575e1ff2 content_length= content_type= elapsed=8501ms
+2015-07-08T16:35:34.388901+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:34.382Z method=GET path=/blist status=304 request_id=9855ab5a-9194-46
+a6-8c1c-553d575e1ff2 content_length= content_type= elapsed=8498ms
+2015-07-08T16:35:38.909507+00:00 app[web.1]: /systems/badgekit/badges/dl100a-bas
+icelectronics
+2015-07-08T16:35:39.121743+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:39.120Z method=GET path="/bdetail?slug=dl100a-basicelectronics" statu
+s=304 request_id=064ef821-fda4-4380-aeda-d4d2f9001eba content_length= content_ty
+pe= elapsed=213ms
+2015-07-08T16:35:39.121791+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:39.120Z method=GET path="/bdetail?slug=dl100a-basicelectronics" statu
+s=304 request_id=064ef821-fda4-4380-aeda-d4d2f9001eba content_length= content_ty
+pe= elapsed=212ms
+2015-07-08T16:35:41.593222+00:00 app[web.1]: dl100a-basicelectronics
+2015-07-08T16:35:41.593232+00:00 app[web.1]: DL100a BasicElectronics
+2015-07-08T16:35:41.811462+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:41.808Z method=GET path="/bapply?slug=dl100a-basicelectronics&name=DL
+100a%20BasicElectronics" status=304 request_id=4613353b-0fbc-4a1d-b2e5-37ce5f22c
+047 content_length= content_type= elapsed=220ms
+2015-07-08T16:35:41.811927+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:41.808Z method=GET path="/bapply?slug=dl100a-basicelectronics&name=DL
+100a%20BasicElectronics" status=304 request_id=4613353b-0fbc-4a1d-b2e5-37ce5f22c
+047 content_length= content_type= elapsed=219ms
+2015-07-08T16:35:42.221955+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:35:42.219Z method=GET path=/favicon.ico status=404 request_id=14153c08-2
+c9e-43c4-9e89-93a35fbb7959 content_length=891 content_type="text/html; charset=u
+tf-8" elapsed=28ms
+2015-07-08T16:36:22.889953+00:00 app[web.1]: { slug: 'dl100a-basicelectronics',
+2015-07-08T16:36:22.889961+00:00 app[web.1]:   evidence: 'for gmail ',
+2015-07-08T16:36:22.889963+00:00 app[web.1]:   email: 'jimhapper@gmail.com',
+2015-07-08T16:36:22.889959+00:00 app[web.1]:   desc: 'for gmail',
+2015-07-08T16:36:22.889965+00:00 app[web.1]:   link: 'https://www.youtube.com/wa
+tch?v=CDBYCZaLUAs' }
+2015-07-08T16:36:22.890233+00:00 app[web.1]: applicationPath /systems/badgekit/b
+adges/dl100a-basicelectronics/applications
+2015-07-08T16:36:22.992296+00:00 app[web.1]: Response: {"status":"created","appl
+ication":{"id":72,"slug":"6b1f501040ef3bf2ad3c53fd76ce9a48","learner":"jimhapper
+@gmail.com","created":"2015-07-08T16:36:22.000Z","assignedTo":null,"assignedExpi
+ration":null,"badge":{"id":2,"slug":"dl100a-basicelectronics","name":"DL100a Bas
+icElectronics","strapline":"Testing a digital logic badge to see how badgekit ca
+n be used to meet the needs of stemArtisans.","earnerDescription":"The DL100 Bas
+ic Electronics badge is meant to certify understanding of simple wiring of LED's
+, Ohm's Law, and measurement of voltage, current, and resistance using a multime
+ter.","consumerDescription":"The DL100 Basic Electronics badge is meant to certi
+fy understanding of simple wiring of LED's, Ohm's Law, and measurement of voltag
+e, current, and resistance using a multimeter.","issuerUrl":"http://stemartisans
+.org","rubricUrl":"","timeValue":10,"timeUnits":"hours","limit":0,"unique":1,"cr
+eated":"2015-05-15T21:53:54.000Z","type":"","archived":false,"criteriaUrl":"http
+://fathomless-plains-3228.herokuapp.com/system/badgekit/badge/dl100a-basicelectr
+onics/criteria","criteria":[],"alignments":[],"evidenceType":null,"categories":[
+],"tags":[],"milestones":[]},"processed":null,"evidence":[{"url":null,"mediaType
+":null,"reflection":"for gmail "}]}}
+2015-07-08T16:36:22.891422+00:00 app[web.1]: appData learner=jimhapper%40gmail.c
+om&evidence%5B0%5D%5Breflection%5D=for%20gmail%20
+2015-07-08T16:36:23.160825+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:36:23.151Z method=POST path=/bsubmit status=200 request_id=b01ff977-7350
+-48ca-b327-7bbabaadaf91 content_length=288 content_type="text/html; charset=utf-
+8" elapsed=406ms
+2015-07-08T16:36:23.172412+00:00 app[web.1]: ip=::ffff:10.154.23.227 time=2015-0
+7-08T16:36:23.151Z method=POST path=/bsubmit status=200 request_id=b01ff977-7350
+-48ca-b327-7bbabaadaf91 content_length=288 content_type="text/html; charset=utf-
+8" elapsed=290ms
+2015-07-08T16:37:21.843615+00:00 app[web.1]: request to hook.js arrived
+2015-07-08T16:37:21.843627+00:00 app[web.1]: request headers are
+2015-07-08T16:37:21.845343+00:00 app[web.1]: { host: 'shielded-beach-7575.heroku
+app.com',
+2015-07-08T16:37:21.845346+00:00 app[web.1]:   connection: 'close',
+2015-07-08T16:37:21.845347+00:00 app[web.1]:   'content-type': 'application/json
+',
+2015-07-08T16:37:21.845349+00:00 app[web.1]:   authorization: 'JWT token="eyJ0eX
+AiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJib2R5Ijp7ImFsZyI6InNoYTI1NiIsImhhc2giOiI3MjIyZ
+mZiOTI4YTg0ZGYwMTA5ZTU2ZTJjNzA0N2RmNmQ0ZTE3ZDUwNGQ4ZWNhMjM1MzhkZWJkMzczNzI3YjVmI
+n19.lXyGXODTWcZ9saCtIuT6A6DchjCIPnYXySFm1cLPrZk"',
+2015-07-08T16:37:21.845351+00:00 app[web.1]:   'x-request-id': '3cfbef20-b7f6-45
+c9-8707-c05c5391ea45',
+2015-07-08T16:37:21.845353+00:00 app[web.1]:   'x-forwarded-proto': 'http',
+2015-07-08T16:37:21.845352+00:00 app[web.1]:   'x-forwarded-for': '23.22.16.53',
+
+2015-07-08T16:37:21.845355+00:00 app[web.1]:   'x-forwarded-port': '80',
+2015-07-08T16:37:21.845357+00:00 app[web.1]:   'connect-time': '4',
+2015-07-08T16:37:21.845359+00:00 app[web.1]:   'x-request-start': '1436373441835
+',
+2015-07-08T16:37:21.845362+00:00 app[web.1]:   'content-length': '3868' }
+2015-07-08T16:37:21.845356+00:00 app[web.1]:   via: '1.1 vegur',
+2015-07-08T16:37:21.845360+00:00 app[web.1]:   'total-route-time': '0',
+2015-07-08T16:37:21.847893+00:00 app[web.1]: decodedToken:
+2015-07-08T16:37:21.848966+00:00 app[web.1]:       { alg: 'sha256',
+2015-07-08T16:37:21.848968+00:00 app[web.1]:         hash: '7222ffb928a84df0109e
+56e2c7047df6d4e17d504d8eca23538debd373727b5f' } },
+2015-07-08T16:37:21.848963+00:00 app[web.1]:   payload:
+2015-07-08T16:37:21.848965+00:00 app[web.1]:    { body:
+2015-07-08T16:37:21.850332+00:00 app[web.1]:   { criterionId: 22, satisfied: 0,
+comment: 'too bad' } ]
+2015-07-08T16:37:21.850328+00:00 app[web.1]: reviewItems check:  [ { criterionId
+: 2, satisfied: 1, comment: 'for gmail' },
+2015-07-08T16:37:21.865107+00:00 app[web.1]: info string is  <p>Your application
+ for the following badge was reviewed:<strong>DL100a BasicElectronics</strong></
+p><p>Great news - your application was approved!</p><p><a href='http://shielded-
+beach-7575.herokuapp.com/accept?badge=dl100a-basicelectronics&earner=jimhapper@g
+mail.com&application=6b1f501040ef3bf2ad3c53fd76ce9a48'>Accept your badge</a></p>
+<p>The reviewer included feedback for you:</p><ul><li><em>will gmail work better
+
+2015-07-08T16:37:21.850331+00:00 app[web.1]:   { criterionId: 12, satisfied: 1,
+comment: 'for gmail address' },
+2015-07-08T16:37:21.865118+00:00 app[web.1]:
+2015-07-08T16:37:21.865114+00:00 app[web.1]: i don't know
+2015-07-08T16:37:21.865112+00:00 app[web.1]:
+2015-07-08T16:37:21.865121+00:00 app[web.1]:
+2015-07-08T16:37:21.865117+00:00 app[web.1]: but I hope so
+2015-07-08T16:37:21.865123+00:00 app[web.1]: </em></li><li><em>for gmail</em></l
+i><li><em>for gmail address</em></li><li><em>too bad</em></li></ul><p><strong><e
+m>Thanks for applying!</em></strong></p>
+2015-07-08T16:37:22.089635+00:00 app[web.1]: { message: 'success' }
+2015-07-08T16:37:21.865120+00:00 app[web.1]:
+2015-07-08T16:37:21.848961+00:00 app[web.1]: { header: { typ: 'JWT', alg: 'HS256
+' },
+2015-07-08T16:37:21.848970+00:00 app[web.1]:   signature: 'lXyGXODTWcZ9saCtIuT6A
+6DchjCIPnYXySFm1cLPrZk' }
+2015-07-08T16:37:21.865116+00:00 app[web.1]:
+2015-07-08T16:37:44.313485+00:00 app[web.1]: awardPath /systems/badgekit/badges/
+dl100a-basicelectronics/instances
+2015-07-08T16:37:44.316425+00:00 app[web.1]: awardData email=jimhapper%40gmail.c
+om

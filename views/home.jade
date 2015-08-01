@@ -1,0 +1,35 @@
+﻿extends layout
+
+block content
+
+  .jumbotron
+    .container
+      img(src="/images/woman-engineer-clip-art-274249.jpg", class="pull-right", style="width:200px")
+      h1="STEM ARTISANS"
+      p.
+        "Adventures with geeks and dreamers..."
+        <a href="/auth/register">register</a> or <a href="/auth/login">login</a>
+  h2="Explore some of our learning pathways"
+  .container
+    .row
+      .col-sm-4
+        .thumbnail
+          img(data-src="holder.js/100%x200", src="/images/BinaryLogicBadge256.png", style="height:150px", data-holder-rendered="true", display="block")
+          .caption
+            h3="Electronics Pathways"
+            p="Activities, modules, and course suggestions for incorporating electronics into your curriculum. Find out more..."
+            a(href="electronicspathways" class="btn btn-primary" role="button") More
+      .col-sm-4
+        .thumbnail
+          img(data-src="holder.js/100%x200", src="/images/gears.jpg", style="height:150px", data-holder-rendered="true", display="block")
+          .caption
+            h3="Mechanisms Pathways"
+            p="Activities, modules, and course suggestions for incorporating mechanisms into your curriculum. Find out more..."
+            a(href="#" class="btn btn-primary" role="button") More
+      .col-sm-4
+        .thumbnail
+          img(data-src="holder.js/100%x200", src="/images/waterrockets.jpg", style="height:150px", data-holder-rendered="true", display="block")
+          .caption
+            h3="Flight Pathways"
+            p="Activities, modules, and course suggestions for incorporating flight into your curriculum. Find out more..."
+            a(href="#" class="btn btn-primary" role="button") More
