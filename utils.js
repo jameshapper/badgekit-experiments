@@ -74,7 +74,7 @@ module.exports.createApp = function() {
 module.exports.requireLogin = function(req, res, next) {
   if (!req.user) {
     res.redirect('/auth/login');
-  } else {
+    } else {
     next();
   }
 };

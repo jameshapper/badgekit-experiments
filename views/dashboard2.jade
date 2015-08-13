@@ -12,17 +12,6 @@ block body
   p First Name: #{user.firstName}
   p Last Name:  #{user.lastName}
   p Email:      #{user.email}
-
-
-
-  if user.data.badges
-    p Criteria:   #{user.data.badges[0].earnerDescription}
-  if user.data.badges
-    p Activity Name: #{user.data.badges[0].badgeName}
-  if user.data.badges
-    p Activity Link: #{user.data.badges[0].badgeSlug}
-
-//
   p Activity Name:       #{user.data.badges[0].badgeName}
   p Activity Link:  #{user.data.badges[0].badgeSlug}
-  p Criteria:   #{user.data.badges[0].earnerDescription}
+  p Criteria:   #{user.data.badges[0].criteria.description}

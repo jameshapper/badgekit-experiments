@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1= subtitle
+	ul
+		each activity, index in activities
+			h2= activity.activityName
+			p= activity.activityStrapline
+			p= activity.criteria
+			a(href= activity.activityUrl) Activity Detail

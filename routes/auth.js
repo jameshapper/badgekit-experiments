@@ -1,8 +1,8 @@
 var bcrypt = require('bcryptjs');
 var express = require('express');
-
-var models = require('../models.js');
 var utils = require('../utils.js');
+var models = require('../models.js');
+ 
 
 var router = express.Router();
 
@@ -22,9 +22,24 @@ router.post('/register', function(req, res) {
   var salt = bcrypt.genSaltSync(10);
   var hash = bcrypt.hashSync(req.body.password, salt);
   var datatest = {
-        criteria: [
-            { id: 1, description: "first description", comment: "this is meant to be added" },
-            { id: 2, description: "second description", comment: "second criterion comment" }
+        badges: [
+            {
+                badgeName: 'badgename',
+                badgeSlug: "the url with badge details",
+                earnerDescription: "from badgekit",
+                criteria: [
+                    {
+                        description: "from badgekit",
+                        comments: [ 
+                            {
+                                comment: 'a comment regarding progress on this criterion',
+                                fileurl: 'a url for associated file',
+                                timepost: 'time this comment was posted'
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
 

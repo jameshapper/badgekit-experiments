@@ -27,7 +27,14 @@ router.use('/bsubmit', require('./bsubmit.js'));
 router.use('/hook', require('./hook.js'));
 router.use('/accept', require('./accept.js'));
 router.use('/electronicspathways', require('./electronicspathways.js'));
-router.use('/auth',require('./auth.js'));
+router.use('/auth', require('./auth.js'));
+router.use('/select', require('./select.js'));
+router.use('/activities', require('./activities.js'));
+
+// Any route that we haven't specified gets this message
+router.get('*', function (req, res) {
+    res.send("Page not found", 404);
+});
 
 
 module.exports = router;

@@ -1,0 +1,30 @@
+extends base
+
+block vars
+  - var title = 'Register Activity'
+
+block body
+  h1 Add Activity Details
+  form(method="post")
+    input(type="hidden", name="_csrf", value=csrfToken)
+
+    span Activity Name:
+    input(type="text", name="activityName", required=true)
+    br
+
+    span Activity Url:
+    input(type="text", name="activityUrl", required=true)
+    br
+
+    span Activity Description:
+    input(type="text", name="activityStrapline", required=true)
+    br
+
+    span Criterion:
+    input(type="text", name="criteria", required=true)
+    br
+
+    span We'll need to add more, but this is it for now!
+    br
+
+    input(type="submit")
