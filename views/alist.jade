@@ -1,10 +1,12 @@
 extends layout
 
 block content
-	h1= subtitle
-	ul
-		each activity, index in activities
-			h2= activity.activityName
-			p= activity.activityStrapline
-			p= activity.criteria
-			a(href= activity.activityUrl) Activity Detail
+    h1= subtitle
+    ul
+        each activity, index in activities
+            h2= activity.activityName
+            p= activity.activityStrapline
+            each criterion, i in activity.criteria
+                p= "Criterion: " + criterion.title
+                p= "How to meet it: " + criterion.body
+            a(href= activity.activityUrl) Activity Detail

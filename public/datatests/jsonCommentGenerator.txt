@@ -1,0 +1,11 @@
+[
+  '{{repeat(4, 9)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    author: '{{firstName()}} {{surname()}}',
+    postID: '{{objectId()}}',
+    body: '{{lorem(2, "sentences")}}',
+    date: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
+  }
+]

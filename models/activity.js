@@ -14,5 +14,5 @@ module.exports.Activity = mongoose.model('Activity', new Schema({
   activityName: { type: String, required: '{PATH} is required.', unique: true },
   activityUrl: { type: String, required: '{PATH} is required.' },
   activityStrapline:     { type: String, required: '{PATH} is required.' },
-  criteria: { type: String, required: '{PATH} is required.' },
+  criteria: { type: Array },
 }));

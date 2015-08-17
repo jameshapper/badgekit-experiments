@@ -1,0 +1,31 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    isAdmin: '{{bool()}}',
+    picture: 'http://placehold.it/32x32',
+    age: '{{integer(13, 20)}}',
+    name: '{{firstName()}}',
+    school: '{{company().toUpperCase()}}',
+    email: '{{email()}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    password: '{{lorem(1, "words")}}',
+    data: {
+      activities: [
+        '{{repeat(2, 4)}}',
+        {
+          actID: '{{objectId()}}',
+          posts: [
+            '{{repeat(1, 2)}}',
+            '{{objectId()}}'
+            ]
+        }
+    ],
+      badges: [
+          '{{repeat(2, 4)}}',
+          '{{objectId()}}'
+      ]
+    }
+  }
+]

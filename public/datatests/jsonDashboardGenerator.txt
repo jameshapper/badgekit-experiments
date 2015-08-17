@@ -1,0 +1,19 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    activityName: '{{company()}}',
+    activityStrapline: '{{lorem(2, "sentences")}}',
+    activityUrl: 'happerfamily@weebly.com',
+    picture: 'http://placehold.it/32x32',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    criteria: [
+      '{{repeat(2, 4)}}',
+      {
+      title: '{{lorem(1, "words")}}',
+      body: '{{lorem(1, "sentences")}}'
+    }
+    ]
+  }
+]

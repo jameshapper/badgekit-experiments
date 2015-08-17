@@ -46,11 +46,14 @@ router.post('/activityregister', function (req, res) {
 
 router.get('/', function (req, res) {
     models.Activity.find({}).exec(function (err, activitiesList) {
+//    models.Activity.find({}, { _id:0, "criteria": 1 }).exec(function (err, activitiesList) {
+
         if (err) {
             console.log("db error in GET /activities: " + err);
             //res.render('500');
         } else {
             res.render('alist.jade', { title: 'ACTIVITIES', subtitle: 'Current List', activities: activitiesList });
+            console.log(activitiesList);
         }
     });
 });

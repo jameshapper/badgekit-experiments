@@ -1,0 +1,213 @@
+[
+  {
+    "_id": "55cf519849d9bce48baed483",
+    "index": 0,
+    "isAdmin": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 17,
+    "name": "Snow",
+    "school": "TECHTRIX",
+    "email": "snowodonnell@techtrix.com",
+    "registered": "2014-09-07T08:42:02 +04:00",
+    "password": "cillum",
+    "data": {
+      "activities": [
+        {
+          "actID": "55cf51986856e2bd11ebf49c",
+          "posts": [
+            "55cf5198850dc5d756159b08"
+          ]
+        },
+        {
+          "actID": "55cf519852e700c9e0d89b61",
+          "posts": [
+            "55cf5198133491d87eb43e29"
+          ]
+        },
+        {
+          "actID": "55cf5198255316070fade692",
+          "posts": [
+            "55cf5198e84abaa6aeccc3eb",
+            "55cf5198dd6d2ba8b4ee1626"
+          ]
+        }
+      ],
+      "badges": [
+        "55cf5198b54c3cd0fa5ea065",
+        "55cf51983fc02f6582f18fa2",
+        "55cf5198bb26b1ea39237e89",
+        "55cf51985305c36ec5a924e2"
+      ]
+    }
+  },
+  {
+    "_id": "55cf5198e2b6b94e93357cef",
+    "index": 1,
+    "isAdmin": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 15,
+    "name": "Doreen",
+    "school": "GLUID",
+    "email": "doreenodonnell@gluid.com",
+    "registered": "2014-01-24T10:59:35 +05:00",
+    "password": "dolor",
+    "data": {
+      "activities": [
+        {
+          "actID": "55cf51982cf2e06427f1ecc9",
+          "posts": [
+            "55cf519820c9aff5ae359342",
+            "55cf51980ca63f9768ed4054"
+          ]
+        },
+        {
+          "actID": "55cf5198ee512531f3f2d969",
+          "posts": [
+            "55cf5198450583ad42a30b0e"
+          ]
+        },
+        {
+          "actID": "55cf5198d28862967a171433",
+          "posts": [
+            "55cf5198521b923cda35ff03",
+            "55cf51984b183985a9cbdc98"
+          ]
+        }
+      ],
+      "badges": [
+        "55cf5198e766405ee45fe54d",
+        "55cf5198023a4ca844e6d0ce",
+        "55cf5198397474408c717dbb",
+        "55cf51988e1471f7bcdb25c5"
+      ]
+    }
+  },
+  {
+    "_id": "55cf519896b39f79e4567718",
+    "index": 2,
+    "isAdmin": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 17,
+    "name": "Moses",
+    "school": "INEAR",
+    "email": "mosesodonnell@inear.com",
+    "registered": "2014-05-10T03:51:54 +04:00",
+    "password": "laborum",
+    "data": {
+      "activities": [
+        {
+          "actID": "55cf5198f2ddc5202e9d5a44",
+          "posts": [
+            "55cf51989b59d534148125b9"
+          ]
+        },
+        {
+          "actID": "55cf5198c2f9a81c20f2c178",
+          "posts": [
+            "55cf51982d14076cae3a98bb",
+            "55cf5198fa07c2f4da48cfba"
+          ]
+        },
+        {
+          "actID": "55cf5198b8e0743f32614f30",
+          "posts": [
+            "55cf5198532d3a7738849108",
+            "55cf51985390743f4bf53221"
+          ]
+        }
+      ],
+      "badges": [
+        "55cf5198ea45741f95d7321a",
+        "55cf519837a4c511faa7bd20"
+      ]
+    }
+  },
+  {
+    "_id": "55cf51989f2a1772321a94a7",
+    "index": 3,
+    "isAdmin": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 17,
+    "name": "Stephens",
+    "school": "NEOCENT",
+    "email": "stephensodonnell@neocent.com",
+    "registered": "2015-03-18T09:21:10 +04:00",
+    "password": "exercitation",
+    "data": {
+      "activities": [
+        {
+          "actID": "55cf519829c6195c89a28f80",
+          "posts": [
+            "55cf51988f1cd3e1164a7c3a"
+          ]
+        },
+        {
+          "actID": "55cf5198bc21f0a94fb67c39",
+          "posts": [
+            "55cf5198f44ac4703ea05d7c",
+            "55cf519869033bc129df3c59"
+          ]
+        },
+        {
+          "actID": "55cf51987d48e4ea7c25b53d",
+          "posts": [
+            "55cf51982740316ddf04d3f0"
+          ]
+        }
+      ],
+      "badges": [
+        "55cf5198a84819365fda55cf",
+        "55cf5198f17e0caffb903d0f",
+        "55cf5198327e95fff2f856e9"
+      ]
+    }
+  },
+  {
+    "_id": "55cf5198346fa8985b8d5aed",
+    "index": 4,
+    "isAdmin": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 15,
+    "name": "Wall",
+    "school": "ZILLIDIUM",
+    "email": "wallodonnell@zillidium.com",
+    "registered": "2014-03-27T01:12:23 +04:00",
+    "password": "officia",
+    "data": {
+      "activities": [
+        {
+          "actID": "55cf519877d393d5d2485f26",
+          "posts": [
+            "55cf519828afcf2a11a467f7",
+            "55cf5198d1e30adae99679d8"
+          ]
+        },
+        {
+          "actID": "55cf5198172a64bee3d39ca0",
+          "posts": [
+            "55cf51982f5d60e93df6b6e3"
+          ]
+        },
+        {
+          "actID": "55cf5198a4dcac97c22fe473",
+          "posts": [
+            "55cf5198157f3141d8a40be1",
+            "55cf5198d66ed154eb5eb695"
+          ]
+        },
+        {
+          "actID": "55cf5198bdc816946599f2c6",
+          "posts": [
+            "55cf5198542b2dc1988a42c8"
+          ]
+        }
+      ],
+      "badges": [
+        "55cf5198d0a7c421b5fd8fd5",
+        "55cf51983f9165e179b428f3",
+        "55cf5198a10bf5bbf73eb48d",
+        "55cf5198c6c9999ba74b58ee"
+      ]
+    }
+  }
+]
