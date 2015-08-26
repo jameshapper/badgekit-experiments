@@ -52,7 +52,7 @@ router.get('/', function (req, res) {
             console.log("db error in GET /activities: " + err);
             //res.render('500');
         } else {
-            res.render('alist.jade', { title: 'ACTIVITIES', subtitle: 'Current List', activities: activitiesList });
+            res.render('alist.jade', { title: 'ACTIVITIES', subtitle: 'Current List', activities: activitiesList, csrfToken: req.csrfToken()});
             console.log(activitiesList);
         }
     });

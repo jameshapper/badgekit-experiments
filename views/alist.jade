@@ -10,3 +10,9 @@ block content
                 p= "Criterion: " + criterion.title
                 p= "How to meet it: " + criterion.body
             a(href= activity.activityUrl) Activity Detail
+            br
+            form(action="/select", method='post')
+                input(type="hidden", name="_csrf", value=csrfToken)
+                input(type="hidden", name="activity", value=activity._id)
+                br
+                input(type='submit', value='Select Activity')

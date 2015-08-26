@@ -1,5 +1,5 @@
 // JavaScript source code
-//submit application
+//Push selected activity id to user collection in MongoDB
 
 var express = require("express");
 var router = express.Router();
@@ -15,8 +15,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(logfmt.requestLogger());
 
 router.post('/', function (req, res) {
-    //submit form
-    console.log(req.body);
+    //
     var applicationPath = "/systems/badgekit/badges/" + req.body.slug + "/applications";
     console.log("applicationPath", applicationPath);
 

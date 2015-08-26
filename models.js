@@ -14,5 +14,8 @@ module.exports.User = mongoose.model('User', new Schema({
   lastName:     { type: String, required: '{PATH} is required.' },
   email:        { type: String, required: '{PATH} is required.', unique: true },
   password:     { type: String, required: '{PATH} is required.' },
+  school:       { type: String},
+  activities:   { type: Array, default: []},
+  badges:       { type: Array, default: []},
   data:         Object,
 }));
