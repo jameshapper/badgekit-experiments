@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var utils = require('./utils');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 var csrf = require('csurf');
 var mongoose = require('mongoose');
 var session = require('client-sessions');
@@ -13,6 +14,9 @@ var middleware = require('./middleware');
 var routes = require('./routes/index');
 
 mongoose.connect('mongodb://localhost/svcc');
+var models = require('./models/activity.js');
+var notes = require('./models/notes.js');
+var comments = require('./models/comments.js');
 var app = express();
 
 // view engine setup
@@ -26,6 +30,14 @@ app.set('view engine', 'jade');
 // middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); //default express app has this as false?
+app.use(methodOverride(function (req, res) {
+    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+        // look in urlencoded POST bodies and delete it
+        var method = req.body._method
+        delete req.body._method
+        return method
+    }
+}));
 app.use(session({
     cookieName: 'session', //JH This "key name" is added to the req object (client-sessions documentation)
     secret: 'keyboard cat',
@@ -37,7 +49,7 @@ app.use(middleware.simpleAuth);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logfmt.requestLogger());
-
+ 
 app.use('/', routes);
 
 var port = Number(process.env.PORT || 5000);

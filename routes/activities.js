@@ -10,8 +10,8 @@ var router = express.Router();
 /**firstName
  * Render the activity registration page.
  */
-router.get('/activityregister', function (req, res) {
-    res.render('activityregister.jade', { csrfToken: req.csrfToken() });
+router.get('/new', function (req, res) {
+    res.render('activityregister.jade', { title: 'ADD NEW ACTIVITY INFORMATION', csrfToken: req.csrfToken() });
 });
 
 /**
@@ -19,7 +19,7 @@ router.get('/activityregister', function (req, res) {
  *
  * Once submitted, admin user will be returned to register another activity
  */
-router.post('/activityregister', function (req, res) {
+router.post('/', function (req, res) {
 
     var activity = new models.Activity({
         activityName: req.body.activityName,
@@ -53,10 +53,37 @@ router.get('/', function (req, res) {
             //res.render('500');
         } else {
             res.render('alist.jade', { title: 'ACTIVITIES', subtitle: 'Current List', activities: activitiesList, csrfToken: req.csrfToken()});
-            console.log(activitiesList);
+//            console.log(activitiesList);
         }
     });
 });
+
+router.get('/:activityid', function (req, res) {
+    var activityid = req.params.activityid;
+    models.Activity.findById(activityid, function (err, activitydetail) {
+        res.render('activitydetail.jade', { title: 'ACTIVITY DETAIL', subtitle: 'Details', activity : activitydetail });
+    })
+});
+
+
+router.get('/:activityid/edit', function (req, res) {
+    var activityid = req.params.activityid;
+    models.Activity.findById(activityid, function (err, activity) {
+        res.render('activityedit.jade', { title: 'EDIT ACTIVITY', subtitle: 'Details', activity : activity, csrfToken: req.csrfToken() });
+    })
+})
+
+
+router.put('/:activityid', function (req, res) {
+    var activityid = req.params.activityid;
+    var activityName = req.body.activityName;
+    var activityUrl = req.body.activityUrl;
+    var activityStrapline = req.body.activityStrapline;
+    models.Activity.update({ _id : activityid }, { $set: {activityName : activityName, activityUrl : activityUrl, activityStrapline : activityStrapline} }, function (err, idunno) {
+        res.redirect(activityid);
+    })
+})
+
 
 module.exports = router;
 

@@ -10,7 +10,7 @@ var ObjectId = Schema.ObjectId;
  * The number of activity criteria is variable, so criteria are stored in data.
  */
 module.exports.Activity = mongoose.model('Activity', new Schema({
-  id:           ObjectId,
+  _id: { type: String },
   activityName: { type: String, required: '{PATH} is required.', unique: true },
   activityUrl: { type: String, required: '{PATH} is required.' },
   activityStrapline:     { type: String, required: '{PATH} is required.' },

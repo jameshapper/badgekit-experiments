@@ -10,14 +10,13 @@ var bodyParser = require('body-parser');
 //app.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
-/*
+
 router.post('/', utils.requireLogin, function (req, res) {
     var activity_id = req.body.activity;
     console.log('activity id is ' + activity_id);
     var email = req.user.email;
     var query = { 'email': email };
-//    var operator = { '$push': { activities: activity_id } };
-    var operator = { '$addToSet': { activities: activity_id } };
+    var operator = { '$push' : { activities: activity_id } };
     user.User.update(query, operator, function (err, updated) {
         if (err) throw err;
         else {
@@ -31,45 +30,30 @@ router.post('/', utils.requireLogin, function (req, res) {
     })
 
     function activitiesList(userEmail, callback) {
+        console.log('Made it to activitiesList function');
         user.User.findOne({ 'email': userEmail }, function (err, doc) {
             var activitiesIDs = doc.activities;
             var activitiesDetails = [];
             console.log("The first id in the activities array is: " + activitiesIDs[0]);
             console.log("Total number of activities chosen is " + activitiesIDs.length);
-            var activityCount = 0; //need this to deal with asynchronous loop that follows
             for (var i = 0; i < activitiesIDs.length; i++) {
-//                console.log("Call to db? " + models.Activity.findOne({})); I don't know why this doesn't work!
+ //               models.Activity.findOne({ '_id': activitiesIDs[i] }, function (err, activityDetail) {
+ //                   activitiesDetails.push(activityDetail);
+ //               })
+                console.log("Call to db? " + models.Activity.findOne({}));
                 models.Activity.findById(activitiesIDs[i], function (err, activityDetail) {
+//                    console.log("activityDetail is " + activityDetail);
                     activitiesDetails.push(activityDetail);
+                    if (activitiesDetails instanceof Array) console.log('Array!');
                     console.log("activitiesDetails length is " + activitiesDetails.length);
-                    if (++activityCount == activitiesIDs.length) {
-                        callback(err, activitiesDetails);
-                    }
                 })
             }
+            console.log("As a string, the activity ID was: " + activitiesIDs[0].toString());
             console.log("activitiesDetails length at end is " + activitiesDetails.length);
+            console.log("Activities details are " + activitiesDetails);
+            callback(err, activitiesDetails);
         })
     }
 });
-
-module.exports = router;
-  
- */
-
-router.post('/', utils.requireLogin, function (req, res) {
-    var activity_id = req.body.activity;
-    console.log('activity id is ' + activity_id);
-    var email = req.user.email;
-    var query = { 'email': email };
-    //    var operator = { '$push': { activities: activity_id } };
-    var operator = { '$addToSet': { activities: activity_id } };
-    user.User.update(query, operator, function (err, updated) {
-        if (err) throw err;
-        else {
-            //redirect to user dashboard
-            res.redirect('/dashboard');
-        }
-    })
-})
 
 module.exports = router;

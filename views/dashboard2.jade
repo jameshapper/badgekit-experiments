@@ -12,6 +12,12 @@ block body
   p First Name: #{user.firstName}
   p Last Name:  #{user.lastName}
   p Email:      #{user.email}
-  p Activity Name:       #{user.data.badges[0].badgeName}
-  p Activity Link:  #{user.data.badges[0].badgeSlug}
-  p Criteria:   #{user.data.badges[0].criteria.description}
+
+  u1
+    each activity, index in Activities
+        h2= "One of your current activites is " + activity.activityName
+        p= "Description: " + activity.activityStrapline
+        each criterion, i in activity.criteria
+            p= "Criterion: " + criterion.title
+            p= "How to meet it: " + criterion.body
+        a(href='activityprogress/'+activity._id) Progress Details

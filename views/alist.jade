@@ -9,7 +9,7 @@ block content
             each criterion, i in activity.criteria
                 p= "Criterion: " + criterion.title
                 p= "How to meet it: " + criterion.body
-            a(href= activity.activityUrl) Activity Detail
+            a(href='activities/'+activity._id) Activity Detail
             br
             form(action="/select", method='post')
                 input(type="hidden", name="_csrf", value=csrfToken)

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1= subtitle
+    ul
+        h2= activity.activityName
+        p= activity.activityStrapline
+        each criterion, i in activity.criteria
+            p= "Criterion: " + criterion.title
+            p= "How to meet it: " + criterion.body
+        a(href= activity.activityUrl) Another Link?
+        br
+        nav.post-links
+            ul
+                li
+                    a(href='/activities') List
+                li
+                    a(href='/activites/comments') Comment
+                li
+                    a(href='/activities/#{activity._id}/edit') Edit
+                li
+                    a(href='/activities/#{activity._id}', method=PUT) Delete

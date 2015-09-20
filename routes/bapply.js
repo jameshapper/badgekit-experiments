@@ -67,7 +67,7 @@ router.get('/sign_s3', function (req, res) {
     });
 });
 
-/*
+/*WARNING--THIS LOOKS LIKE A MISTAKEN ROUTE!!!!
  * STEP 10 (FINAL STEP, so far)
  * Respond to POST requests to /submit_form.
  * This function needs to be completed to handle the information in 

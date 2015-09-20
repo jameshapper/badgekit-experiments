@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= 'Edit Activity Details'
+  form(method="post", action='/activities/#{activity._id}')
+    input(type="hidden", name="_csrf", value=csrfToken)
+    input(type="hidden", name="_method", value= "put")
+
+    span Activity Name:
+    input(type="text", name="activityName", placeholder=activity.activityName)
+    br
+
+    span Activity Url:
+    input(type="text", name="activityUrl", placeholder=activity.activityUrl)
+    br
+
+    span Activity Description:
+    input(type="text", name="activityStrapline", required=true, placeholder=activity.activityStrapline)
+    br
+
+    span We'll need to add more, but this is it for now!
+    br
+
+    input(type="submit")

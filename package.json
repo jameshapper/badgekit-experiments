@@ -26,6 +26,7 @@
     "jade": "~1.9.2",
     "jws": "^3.0.0",
     "logfmt": "^1.2.0",
+    "method-override": "^2.3.5",
     "mongoose": "^4.1.0",
     "morgan": "~1.5.1",
     "nodemailer": "^1.4.0",

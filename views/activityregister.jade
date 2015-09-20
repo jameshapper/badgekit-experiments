@@ -1,10 +1,7 @@
-extends base
+extends layout
 
-block vars
-  - var title = 'Register Activity'
-
-block body
-  h1 Add Activity Details
+block content
+  h1= 'Add Activity Details'
   form(method="post")
     input(type="hidden", name="_csrf", value=csrfToken)
 
