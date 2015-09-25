@@ -1,0 +1,24 @@
+extends ../layout
+
+block vars
+  - var title = 'Add Note'
+
+block body
+  h1 Add Note
+  p="activityId should be " + activityId
+  form(action="/notes", method="post")
+    input(type="hidden", name="_csrf", value=csrfToken)
+    input(type="hidden", name="activityId", value=activityId)
+
+    span Note Title:
+    input(type="text", name="title", required=true)
+    br
+
+    span Note Body:
+    input(type="text", name="body", required=true)
+    br
+
+    span We'll need to add more, but this is it for now!
+    br
+
+    input(type="submit")

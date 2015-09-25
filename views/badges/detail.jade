@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	-badgeData= badgeData
+	h1= badgeData.name + " Badge Details"
+	div(class="container")
+		img(alt=badgeData.name src=badgeData.imageUrl width=350)
+		h4= badgeData.strapline
+		p= badgeData.earnerDescription
+
+		if badgeData.criteria.length > 0
+			h2= "Criteria:"
+			ul(class="text-left")
+				each criterion, index in badgeData.criteria
+					li= criterion.description
+		a(href='bapply?slug=' + badgeData.slug + '&name=' + badgeData.name) Apply
+		br
+		a(href='select?slug=' + badgeData.slug) Select

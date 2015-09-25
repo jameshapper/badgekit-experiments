@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    h1= subtitle
+    ul
+        h2= note.title
+        p= note.body
+        each comment, i in note.comments
+            p= "Comment: " + comment.body
+        br
+        nav.post-links
+            ul
+                li
+                    a(href='/notes') List
+                li
+                    a(href='/activites/comments') Comment
+                li
+                    a(href='/notes/#{note._id}/edit') Edit

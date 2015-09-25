@@ -20,13 +20,21 @@ router.get('/about', function (req, res) {
 router.use('/auth', require('./auth.js'));
 
 //USER DASHBOARD--validation takes place in dashboard.js with requireLogin utility
-router.use('/dashboard', require('./dashboard.js'));
-router.use('/select', require('./select.js'));
+router.use('/dashboard', require('./userdata/dashboard.js'));
+router.use('/select', require('./userdata/select.js'));
+
+//ALTERNATE DASHBOARD FOR TESTING
+router.use('/dashboardtest', require('./userdata/dashboardtest.js'));
+
 
 router.get('/activityprogress/:useractivity', utils.requireLogin, function (req, res) {
     
     //this route should be accessed by the user dashboard and include "useractivity" as a parameter
     //in the url
+    //DATABASE ACCESS
+    //   Activities collection
+    //   Notes collection
+    //   (Comments collection via "populate" of Note)
     
     var models = require('../models/activity.js');
     var notes = require('../models/notes.js');
@@ -43,6 +51,7 @@ router.get('/activityprogress/:useractivity', utils.requireLogin, function (req,
     
     activityProgress(email, useractivity, function (err, activityDetail, Notes) {
         console.log('Activity detail is ' + activityDetail);
+        console.log("type of activityDetail is " + typeof (activityDetail));
         console.log('Notes should include comments here ' + Notes);
 //        res.redirect('/');
         res.render('activityprogress', { activityDetail: activityDetail, notes: Notes });
@@ -62,7 +71,7 @@ router.get('/activityprogress/:useractivity', utils.requireLogin, function (req,
     }
 });
 
-router.use('/notes', require('./notes.js'));
+router.use('/notes', require('./userdata/notes.js'));
 //router.use('/addcomment',require('./addcomment.js');
 
 /**
@@ -77,18 +86,18 @@ router.use('/notes', require('./notes.js'));
  */
 
 //ACTIVITIES ROUTES--list activities and provide paths to details
-router.use('/electronicspathways', require('./electronicspathways.js'));
-router.use('/activities', require('./activities.js'));
+router.use('/electronicspathways', require('./activities/electronicspathways.js'));
+router.use('/activities', require('./activities/activities.js'));
 //We also want to add a route to see details of a particular activity
 //This could be added as a /permalink route from the /activities route above?
 
 //BADGEKIT and BADGEKIT API ACCESS
-router.use('/blist', require('./blist.js'));
-router.use('/bdetail', require('./bdetail.js'));
-router.use('/bapply', require('./bapply.js'));
-router.use('/bsubmit', require('./bsubmit.js'));
-router.use('/hook', require('./hook.js'));
-router.use('/accept', require('./accept.js'));
+router.use('/blist', require('./badges/blist.js'));
+router.use('/bdetail', require('./badges/bdetail.js'));
+router.use('/bapply', require('./badges/bapply.js'));
+router.use('/bsubmit', require('./badges/bsubmit.js'));
+router.use('/hook', require('./badges/hook.js'));
+router.use('/accept', require('./badges/accept.js'));
 
 // Any route that we haven't specified gets this message
 router.get('*', function (req, res) {

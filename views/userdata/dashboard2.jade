@@ -1,0 +1,20 @@
+extends ../layout
+
+block body
+  h1 Dashboard
+  p.
+    Welcome to your dashboard! You are now logged in.
+
+  h2 User Information
+  p First Name: #{user.firstName}
+  p Last Name:  #{user.lastName}
+  p Email:      #{user.email}
+
+  u1
+    each activity, index in Activities
+        h2= "One of your current activites is " + activity.activityName
+        p= "Description: " + activity.activityStrapline
+        each criterion, i in activity.criteria
+            p= "Criterion: " + criterion.title
+            p= "How to meet it: " + criterion.body
+        a(href='activityprogress/'+activity._id) Progress Details

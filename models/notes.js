@@ -10,10 +10,11 @@ var ObjectId = Schema.ObjectId;
  * This is how we create, edit, delete, and retrieve notes via MongoDB.
  */
 module.exports.Note = mongoose.model('Note', new Schema({
-  _id: { type: ObjectId },
+  id: { type: ObjectId },
   authorId: { type: String, required: '{PATH} is required.' },
-    //  activityId: mongoose.Schema.Types.ObjectId,
-  activityId: { type: String },
+//  authorId: { type: ObjectId, ref: 'User' },
+  activityId: mongoose.Schema.Types.ObjectId,
+//  activityId: { type: String },
   title:     { type: String, required: '{PATH} is required.', unique: true },
   body: { type: String, required: '{PATH} is required.' },
   comments: [{type: ObjectId, ref: 'comments'}]
