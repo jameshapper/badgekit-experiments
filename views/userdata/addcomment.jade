@@ -1,16 +1,18 @@
 extends ../layout
 
 block vars
-  - var title = 'Add Comment'
+  - var title = 'Comments'
 
 block body
   h1 Add Comment
-  form(method="post")
+  form(method="post", action='addcomment')
     input(type="hidden", name="_csrf", value=csrfToken)
-    input(type="hidden", name="commentAuthor", value=#{user._id})
+    input(type="hidden", name="commentAuthor", value=user.firstName)
+    input(type="hidden", name="noteId", value=noteId)
+
 
     span Comment Body:
-    input(type="text", name="activityName", required=true)
+    input(type="text", name="commentBody", required=true)
     br
 
     span We'll need to add more, but this is it for now!

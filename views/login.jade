@@ -12,6 +12,8 @@ html
         .col-md-4.col-md-offset-7
           .panel.panel-default
             .panel-heading
+              if error
+                p=error
               span.glyphicon.glyphicon-lock
               |  Login
             .panel-body

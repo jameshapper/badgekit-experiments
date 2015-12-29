@@ -9,7 +9,7 @@ block body
   nav.post-links
     ul
         li
-            a(href='/notes/new') ADD NEW NOTE
+            a(href='/notes/new?activityId='+activityDetail._id) ADD NEW NOTE
   p.
     Here are the details on your activity.
 
@@ -34,7 +34,7 @@ block body
             li
                 a(href='/notes/new?activityId='+activityDetail._id) New Note
             li
-                a(href='/notes/#{note._id}/addcomment') Add Comment
+                a(href='/notes/addcomment?noteId='+note._id) Add Comment
             li
                 a(href='/notes/#{note._id}/edit') Edit Note
         br

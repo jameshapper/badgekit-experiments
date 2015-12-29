@@ -1,7 +1,7 @@
 var bcrypt = require('bcryptjs');
 var express = require('express');
 var utils = require('../utils.js');
-var models = require('../models.js');
+var models = require('../models/users.js');
 
 //DATABASE ACCESS
 //   Users collection
@@ -62,13 +62,13 @@ router.get('/login', function(req, res) {
 router.post('/login', function(req, res) {
   models.User.findOne({ email: req.body.email }, 'firstName lastName email password data', function(err, user) {
     if (!user) {
-      res.render('login.jade', { error: "Incorrect email / password." });
+      res.render('login.jade', { csrfToken: req.csrfToken(), error: "Incorrect email / password." });
     } else {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         utils.createUserSession(req, res, user);
         res.redirect('/dashboard');
       } else {
-        res.render('login.jade', { error: "Incorrect email / password."  });
+        res.render('login.jade', { csrfToken: req.csrfToken(), error: "Incorrect email / password."  });
       }
     }
   });
@@ -76,6 +76,8 @@ router.post('/login', function(req, res) {
 
 /**
  * Log a user out of their account, then redirect them to the home page.
+ * reset() used here https://stormpath.com/blog/everything-you-ever-wanted-to-know-about-node-dot-js-sessions/
+ * CHECK: I can't find documentation on this reset() method, except for resetting a javascript form
  */
 router.get('/logout', function(req, res) {
   if (req.session) {

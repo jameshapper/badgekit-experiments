@@ -4,7 +4,7 @@ var express = require("express");
 var router = express.Router();
 var utils = require('../../utils.js');
 var actvity2 = require('../../models/activity2.js');
-var user2 = require('../../models.js');
+var user2 = require('../../models/users.js');
 var util = require('util');
 var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));

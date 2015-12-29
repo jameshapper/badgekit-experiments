@@ -4,7 +4,7 @@ var express = require("express");
 var router = express.Router();
 var utils = require('../../utils.js');
 var models = require('../../models/activity.js');
-var user = require('../../models.js');
+var user = require('../../models/users.js');
 //var mongoose = require("mongoose");
 var bodyParser = require('body-parser');
 //app.use(bodyParser.json());

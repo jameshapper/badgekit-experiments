@@ -26,6 +26,22 @@ router.use('/select', require('./userdata/select.js'));
 //ALTERNATE DASHBOARD FOR TESTING
 router.use('/dashboardtest', require('./userdata/dashboardtest.js'));
 
+/**
+ * /activityprogress            This is meant to show any notes and comments that are associated with the given activity
+ *                              which is part of the user's current focus
+ * 
+ * arguments:
+ *              :useractivity   a parameter that should be a valid ObjectId for an activity referenced in the user collection
+ *                              within the "activities" array
+ * 
+ * failures:
+ *              :useractivity not a valid activity in the user activity array. The call to the Activity model will return err.
+ *              We can return to user dashboard with a request to try again.
+ *              
+ *              note for the specific user and activity is not found
+ *         
+ * 
+ **/
 
 router.get('/activityprogress/:useractivity', utils.requireLogin, function (req, res) {
     
@@ -50,16 +66,20 @@ router.get('/activityprogress/:useractivity', utils.requireLogin, function (req,
     console.log('activity id is ' + useractivity);
     
     activityProgress(email, useractivity, function (err, activityDetail, Notes) {
-        console.log('Activity detail is ' + activityDetail);
-        console.log("type of activityDetail is " + typeof (activityDetail));
-        console.log('Notes should include comments here ' + Notes);
-//        res.redirect('/');
+        if (err) return next(err);
+
+//        console.log('Activity detail is ' + activityDetail);
+//        console.log("type of activityDetail is " + typeof (activityDetail));
+//        console.log('Notes should include comments here ' + Notes);//CONSOLE LOGS; UNCOMMENT IF NEEDED
         res.render('activityprogress', { activityDetail: activityDetail, notes: Notes });
     });
     
     function activityProgress(userEmail, useractivity, callback) {
         
         models.Activity.findById(useractivity, function (err, activityDetail) {
+            if (err) return next(err);
+            if (!activityDetail) return next(new Error('We were not able to find the activity.')) ;
+
             notes.Note.find({ authorId: userEmail, activityId: useractivity}).populate('comments').exec(function(err, noteswithcomments){
 
                 console.log('note should include comments ' + noteswithcomments);
@@ -101,7 +121,7 @@ router.use('/accept', require('./badges/accept.js'));
 
 // Any route that we haven't specified gets this message
 router.get('*', function (req, res) {
-    res.send("Page not found", 404);
+    res.send("Page not found");
 });
 
 

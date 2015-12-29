@@ -11,8 +11,6 @@ block content
         nav.post-links
             ul
                 li
-                    a(href='/notes') List
-                li
-                    a(href='/activites/comments') Comment
+                    a(href='addcomment?noteId='+note._id) Comment
                 li
                     a(href='/notes/#{note._id}/edit') Edit

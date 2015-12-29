@@ -11,8 +11,9 @@ var models = require('../../models/comments.js');
 var router = express.Router();
 
 /**
- * Render the add comment page.
+ * render the add comment page.
  */
+
 router.get('/', function (req, res) {
     res.render('addcomment.jade', { csrfToken: req.csrfToken() });
 });
@@ -22,6 +23,7 @@ router.get('/', function (req, res) {
  *
  * Once submitted, user will be returned to add another activity
  */
+
 router.post('/', function (req, res) {
 
     var comment = new models.Comment({

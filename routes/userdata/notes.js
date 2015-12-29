@@ -3,6 +3,7 @@ var bcrypt = require('bcryptjs');
 var express = require('express');
 var utils = require('../../utils.js');
 var notes = require('../../models/notes.js');
+var comments = require('../../models/comments.js');
 var router = express.Router();
 var util = require('util');
 
@@ -68,11 +69,49 @@ router.get('/', function (req, res) {
     });
 });
 */
+/**
+ * render the add comment page.
+ */
 
+router.get('/addcomment', function (req, res) {
+    var noteId = req.query.noteId;
+    res.render('addcomment.jade', { csrfToken: req.csrfToken(), noteId: noteId });
+});
+
+/**
+ * Create a new comment
+ *
+ * Once submitted, user will be returned to add another activity
+ */
+
+router.post('/addcomment', function (req, res) {
+    
+    var comment = new comments.Comment({
+        author: req.body.commentAuthor,
+        body: req.body.commentBody,
+        noteId: req.body.noteId,
+    });
+    var noteId = req.body.noteId;
+    var commentBody = req.body.commentBody;
+
+    comment.save(function (err) {
+        if (err) {
+            var error = 'Something bad happened! Please try again.';
+            
+            res.render('addcomment.jade', { error: error });
+        } else {
+            comments.Comment.findOne({ body: commentBody }, { _id: 1 }).exec(function (err, commentId) {
+                notes.Note.update({ _id: noteId }, { $push: { comments: commentId } }).exec(function (err, updated) {
+                    res.redirect(noteId);
+                })
+            })
+        }
+    })
+});
 
 router.get('/:noteid', function (req, res) {
     var noteid = req.params.noteid;
-    notes.Note.findById(noteid, function (err, note) {
+    notes.Note.findById(noteid).populate('comments').exec(function (err, note) {
         res.render('note.jade', { title: 'NOTE DETAIL', subtitle: 'Details', note: note });
     })
 });
@@ -94,6 +133,8 @@ router.put('/:noteid', function (req, res) {
         res.redirect(noteid);
     })
 })
+
+
 
 module.exports = router;
 
