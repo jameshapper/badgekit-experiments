@@ -95,7 +95,7 @@ router.get('/', function (req, res) {
                                             hash: crypto.createHash('SHA256').update(processData).digest('hex')
                                         }
                                     },
-                                    secret: 'donttell'
+                                    secret: 'BK_SECRET'
                                 };
             
                                 var requestOptions = {
